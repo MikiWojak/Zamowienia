@@ -2,23 +2,35 @@
 //początek
 session_start();
 
-//połączenie z BD
+//dane i ograniczenie rzucania błędani
 require_once "connect.php";
-$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
-//obsługa polskich znaków
-$polaczenie->set_charset("utf8");
+mysqli_report(MYSQLI_REPORT_STRICT);
 
-//połączenie nieudane
-if ($polaczenie->errno != 0)
+try
 {
-    echo "Error: ".$polaczenie->errno;
+    //połączenie z BD
+    $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
+    //połączenie nieudane
+    if ($polaczenie->connect_errno != 0)
+    {
+        throw new Exception(mysqli_connect_errno());
+    }
+    //połączenie udane
+    else
+    {
+        //obsługa polskich znaków
+        $polaczenie->set_charset("utf8");
+        //zapytanie
+        $zapytanie = "SELECT nazwa_klienta FROM klienci WHERE id_klienta = 1";
+        $wynik = $polaczenie->query($zapytanie);
+    }
+    //zamknięcie połączenia
+    $polaczenie->close();
 }
-//połączenie udane
-else
+catch(Exception $e)
 {
-    //zapytanie
-    $zapytanie = "SELECT nazwa_klienta FROM klienci WHERE id_klienta = 1";
-    $wynik = $polaczenie->query($zapytanie);
+    echo '<b>ERROR!!!</b><br>';
+    echo $e;
 }
 ?>
 
@@ -39,8 +51,8 @@ else
         <?php
         if (isset($wynik))
         {
-            //echo "Wynik";
-            echo $wynik;
+            echo "Wynik";
+            //echo $wynik;
         }
         ?>
     </div>
