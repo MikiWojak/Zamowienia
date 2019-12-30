@@ -12,7 +12,7 @@
    </div>
    
    <div class="container">
-       <a href="#">Lista klientów</a>
+       <a href="klienci.php">Lista klientów</a>
    </div>
 </body>
 </html>
