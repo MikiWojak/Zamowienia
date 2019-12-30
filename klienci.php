@@ -1,3 +1,27 @@
+<?php
+//początek
+session_start();
+
+//połączenie z BD
+require_once "connect.php";
+$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
+//obsługa polskich znaków
+$polaczenie->set_charset("utf8");
+
+//połączenie nieudane
+if ($polaczenie->errno != 0)
+{
+    echo "Error: ".$polaczenie->errno;
+}
+//połączenie udane
+else
+{
+    //zapytanie
+    $zapytanie = "SELECT nazwa_klienta FROM klienci WHERE id_klienta = 1";
+    $wynik = $polaczenie->query($zapytanie);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -12,7 +36,13 @@
    </div>
     
     <div class="container">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis corrupti in esse, laborum. Quia doloremque inventore harum ratione ipsam earum et, sit delectus natus, cupiditate consectetur ab id exercitationem consequuntur.
+        <?php
+        if (isset($wynik))
+        {
+            //echo "Wynik";
+            echo $wynik;
+        }
+        ?>
     </div>
 </body>
 </html>
