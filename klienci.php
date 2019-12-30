@@ -21,8 +21,10 @@ try
         //obsługa polskich znaków
         $polaczenie->set_charset("utf8");
         //zapytanie
-        $zapytanie = "SELECT nazwa_klienta FROM klienci WHERE id_klienta = 1";
+        $zapytanie = 'SELECT nazwa_klienta FROM klienci WHERE id_klienta = 1';
         $wynik = $polaczenie->query($zapytanie);
+        //ilość rekordów
+        $ile = $wynik->num_rows;
     }
     //zamknięcie połączenia
     $polaczenie->close();
@@ -51,8 +53,9 @@ catch(Exception $e)
         <?php
         if (isset($wynik))
         {
-            echo "Wynik";
+            //echo "Wynik";
             //echo $wynik;
+            echo $ile;
         }
         ?>
     </div>
