@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+   <div class="title">
+        <h1>Zamówienia</h1>
+   </div>
+   
+   <div class="container">
+       <a href="#">Lista klientów</a>
+   </div>
 </body>
 </html>
