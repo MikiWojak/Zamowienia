@@ -44,33 +44,40 @@ catch(Exception $e)
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <div class="title">
+   <header>
        <h1>Klienci</h1>
-   </div>
+   </header>
     
     <div class="container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Nazwa</th>
-                    <th>Partner</th>
-                    <th>Imię</th>
-                    <th>Nazwisko</th>
-                    <th>Adres</th>
-                    <th>Poczta</th>
-                    <th>Telefon</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                    while ($wiersz = mysqli_fetch_array($wynik))
-                    {
-                        echo "<tr><td>{$wiersz['nazwa_klienta']}</td><td>{$wiersz['czy_partner']}</td><td>{$wiersz['imie_klienta']}</td><td>{$wiersz['nazwisko_klienta']}</td><td>{$wiersz['adres_klienta']}</td><td>{$wiersz['poczta_klienta']}</td><td>{$wiersz['tel_klienta']}</td><td>{$wiersz['email_klienta']}</td></tr>";
-                    }
-                ?>
-            </tbody>
-        </table>
+       <main>
+           <article>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nazwa</th>
+                            <th>Partner</th>
+                            <th>Imię</th>
+                            <th>Nazwisko</th>
+                            <th>Adres</th>
+                            <th>Poczta</th>
+                            <th>Telefon</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            while ($wiersz = mysqli_fetch_array($wynik))
+                            {
+                                echo "<tr><td>{$wiersz['nazwa_klienta']}</td><td>{$wiersz['czy_partner']}</td><td>{$wiersz['imie_klienta']}</td><td>{$wiersz['nazwisko_klienta']}</td><td>{$wiersz['adres_klienta']}</td><td>{$wiersz['poczta_klienta']}</td><td>{$wiersz['tel_klienta']}</td><td>{$wiersz['email_klienta']}</td></tr>";
+                            }
+                        ?>
+                    </tbody>
+                </table>
+            </article>
+        </main>
+        <article>
+            <a href="index.php">Strona główna</a>
+        </article>
     </div>
 </body>
 </html>
