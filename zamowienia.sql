@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 30 Gru 2019, 11:02
+-- Czas generowania: 31 Gru 2019, 14:23
 -- Wersja serwera: 10.4.10-MariaDB
 -- Wersja PHP: 7.3.12
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `klienci` (
   `id_klienta` int(11) NOT NULL,
   `nazwa_klienta` text COLLATE utf8_polish_ci NOT NULL,
-  `czy_partner` tinyint(1) NOT NULL,
+  `czy_partner` text COLLATE utf8_polish_ci NOT NULL,
   `imie_klienta` text COLLATE utf8_polish_ci NOT NULL,
   `nazwisko_klienta` text COLLATE utf8_polish_ci NOT NULL,
   `adres_klienta` text COLLATE utf8_polish_ci NOT NULL,
@@ -45,9 +45,9 @@ CREATE TABLE `klienci` (
 --
 
 INSERT INTO `klienci` (`id_klienta`, `nazwa_klienta`, `czy_partner`, `imie_klienta`, `nazwisko_klienta`, `adres_klienta`, `poczta_klienta`, `tel_klienta`, `email_klienta`) VALUES
-(1, 'Jan Kowalski', 1, 'Jan', 'Kowalski', 'ul. Długa 23/5', '34-100 Wadowice', '026 283 291', 'jan.kowalski@poczta.pl'),
-(2, 'Anna Nowak', 0, 'Anna', 'Nowak', 'Zembrzyce 176', '34-210 Zembrzyce', '372 127 198', 'anna-nowak@gmail.com'),
-(3, 'Grzegorz Marciniak', 0, 'Grzegorz', 'Marciniak', 'ul. Na Stawach 11/8', '34-200 Sucha Beskidzka', '125 376 122', 'grzechu_marciniak@wp.pl');
+(1, 'Jan Kowalski', 'tak', 'Jan', 'Kowalski', 'ul. Długa 23/5', '34-100 Wadowice', '026 283 291', 'jan.kowalski@poczta.pl'),
+(2, 'Anna Nowak', 'nie', 'Anna', 'Nowak', 'Zembrzyce 176', '34-210 Zembrzyce', '372 127 198', 'anna-nowak@gmail.com'),
+(3, 'Grzegorz Marciniak', 'nie', 'Grzegorz', 'Marciniak', 'ul. Na Stawach 11/8', '34-200 Sucha Beskidzka', '125 376 122', 'grzechu_marciniak@wp.pl');
 
 --
 -- Indeksy dla zrzutów tabel

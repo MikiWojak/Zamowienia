@@ -52,15 +52,21 @@ catch(Exception $e)
         <table>
             <thead>
                 <tr>
+                    <th>Nazwa</th>
+                    <th>Partner</th>
                     <th>Imię</th>
                     <th>Nazwisko</th>
+                    <th>Adres</th>
+                    <th>Poczta</th>
+                    <th>Telefon</th>
+                    <th>Email</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                     while ($wiersz = mysqli_fetch_array($wynik))
                     {
-                        echo "<tr><td>{$wiersz['imie_klienta']}</td><td>{$wiersz['nazwisko_klienta']}</td><\tr>";
+                        echo "<tr><td>{$wiersz['nazwa_klienta']}</td><td>{$wiersz['czy_partner']}</td><td>{$wiersz['imie_klienta']}</td><td>{$wiersz['nazwisko_klienta']}</td><td>{$wiersz['adres_klienta']}</td><td>{$wiersz['poczta_klienta']}</td><td>{$wiersz['tel_klienta']}</td><td>{$wiersz['email_klienta']}</td></tr>";
                     }
                 ?>
             </tbody>
