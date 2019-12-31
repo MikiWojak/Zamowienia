@@ -74,9 +74,12 @@ catch(Exception $e)
                     </tbody>
                 </table>
             </article>
+            <article>
+                <a href="klient_form.php">Dodaj wpis</a>
+            </article>
         </main>
         <article>
-            <a href="index.php">Strona główna</a>
+            <p><a href="index.php">Strona główna</a></p>
         </article>
     </div>
 </body>
