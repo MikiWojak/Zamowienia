@@ -41,6 +41,21 @@ catch(Exception $e)
     <meta charset="UTF-8">
     <title>Klienci</title>
     
+    <style>
+    table
+    {
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    table, th, td
+    {
+        padding: 5px;
+        border: 2px solid #000000;
+    }
+        
+    </style>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
