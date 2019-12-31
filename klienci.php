@@ -21,9 +21,9 @@ try
         //obsługa polskich znaków
         $polaczenie->set_charset("utf8");
         //zapytanie
-        $zapytanie = 'SELECT nazwa_klienta FROM klienci WHERE id_klienta = 1';
+        $zapytanie = 'SELECT * FROM klienci';
         $wynik = $polaczenie->query($zapytanie);
-        $wiersz = mysqli_fetch_array($wynik);
+        //$wiersz = mysqli_fetch_array($wynik);
     }
     //zamknięcie połączenia
     $polaczenie->close();
@@ -49,13 +49,22 @@ catch(Exception $e)
    </div>
     
     <div class="container">
-        <?php
-        if (isset($wynik))
-        {
-            //echo "Wynik";
-            echo $wiersz['nazwa_klienta']."<br>";
-        }
-        ?>
+        <table>
+            <thead>
+                <tr>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    while ($wiersz = mysqli_fetch_array($wynik))
+                    {
+                        echo "<tr><td>{$wiersz['imie_klienta']}</td><td>{$wiersz['nazwisko_klienta']}</td><\tr>";
+                    }
+                ?>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
