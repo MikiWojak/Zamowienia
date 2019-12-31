@@ -21,7 +21,7 @@ try
         //obsługa polskich znaków
         $polaczenie->set_charset("utf8");
         //zapytanie
-        $zapytanie = 'SELECT nazwa_klientaFROM klienci WHERE id_klienta = 1';
+        $zapytanie = 'SELECT nazwa_klienta FROM klienci WHERE id_klienta = 1';
         $wynik = $polaczenie->query($zapytanie);
         $wiersz = mysqli_fetch_array($wynik);
     }
