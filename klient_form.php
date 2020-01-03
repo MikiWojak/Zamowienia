@@ -43,11 +43,11 @@
                 </div>
                 
                 <div class="formRow">
-                    <label>Telefon <input type="text" name="telefon"></label>
+                    <label>Telefon <input type="tel" name="telefon"></label>
                 </div>
                 
                 <div class="formRow">
-                    <label>Email <input type="text" name="email"></label>
+                    <label>Email <input type="email" name="email"></label>
                 </div>
             </form>
         </article>
