@@ -25,6 +25,30 @@
                         <div><label>Nie<input type="radio" name="partner" value="nie" checked></label></div>
                     </fieldset>
                 </div>
+                
+                <div class="formRow">
+                    <label>Imię <input type="text" name="imie"></label>
+                </div>
+                
+                <div class="formRow">
+                    <label>Nazwisko <input type="text" name="nazwisko"></label>
+                </div>
+                
+                <div class="formRow">
+                    <label>Adres <input type="text" name="adres"></label>
+                </div>
+                
+                <div class="formRow">
+                    <label>Poczta <input type="text" name="poczta"></label>
+                </div>
+                
+                <div class="formRow">
+                    <label>Telefon <input type="text" name="telefon"></label>
+                </div>
+                
+                <div class="formRow">
+                    <label>Email <input type="text" name="email"></label>
+                </div>
             </form>
         </article>
     </main>
