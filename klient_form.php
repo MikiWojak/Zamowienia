@@ -42,52 +42,67 @@ if (isset($_POST['nazwa']))
     </header>
     <main>
         <article>
-            <form method="post">
-                <div class="formRow">
-                    <label>Nazwa <input type="text" name="nazwa" required></label>
-                </div>
-                
-                <div class="formRow">
+            <div class="container">
+                <form method="post">
+                    <div class="formRow">
+                        <div>Nazwa:</div>
+                        <div><input type="text" name="nazwa" required></div>
+                    </div>
+
                     <fieldset>
                         <legend>Czy jesteś partnerem</legend>
-                       
+
                         <div><label>Tak<input type="radio" name="partner" value="tak"></label></div>
                         <div><label>Nie<input type="radio" name="partner" value="nie" checked></label></div>
                     </fieldset>
-                </div>
-                
-                <div class="formRow">
-                    <label>Imię <input type="text" name="imie"></label>
-                </div>
-                
-                <div class="formRow">
-                    <label>Nazwisko <input type="text" name="nazwisko"></label>
-                </div>
-                
-                <div class="formRow">
-                    <label>Adres <input type="text" name="adres"></label>
-                </div>
-                
-                <div class="formRow">
-                    <label>Poczta <input type="text" name="poczta"></label>
-                </div>
-                
-                <div class="formRow">
-                    <label>Telefon <input type="tel" name="telefon"></label>
-                </div>
-                
-                <div class="formRow">
-                    <label>Email <input type="email" name="email"></label>
-                </div>
-                
-                <div class="formRow">
-                    <input type="submit" value="Zapisz">
-                </div>
-                
-                <div class="formRow">
-                    <input type="reset" value="Resetuj">
-                </div>
-            </form>
+
+                    <fieldset>
+                        <legend>Dane osobowe</legend>
+
+                        <div class="formRow">
+                            <div>Imię:</div>
+                            <div><input type="text" name="imie"></div>
+                        </div>
+
+                        <div class="formRow">
+                            <div>Nazwisko:</div>
+                            <div><input type="text" name="nazwisko"></div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Dane kontaktowe</legend>
+
+                        <div class="formRow">
+                            <div>Adres:</div>
+                            <div><input type="text" name="adres"></div>
+                        </div>
+
+                        <div class="formRow">
+                            <div>Poczta:</div>
+                            <div><input type="text" name="poczta"></div>
+                        </div>
+
+                        <div class="formRow">
+                            <div>Telefon:</div>
+                            <div><input type="tel" name="telefon"></div>
+                        </div>
+
+                        <div class="formRow">
+                            <div>Email:</div>
+                            <div><input type="email" name="email"></div>
+                        </div>
+                    </fieldset>
+
+                    <div class="formRow">
+                        <input type="submit" value="Zapisz">
+                    </div>
+
+                    <div class="formRow">
+                        <input type="reset" value="Resetuj">
+                    </div>
+                </form>
+            </div>
         </article>
     </main>
 </body>
