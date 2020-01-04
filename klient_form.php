@@ -76,22 +76,22 @@ if (isset($_POST['nazwa']))
 
                             <div class="formRow">
                                 <div>Adres:</div>
-                                <div><input type="text" name="adres"></div>
+                                <div><input type="text" name="adres" required></div>
                             </div>
 
                             <div class="formRow">
                                 <div>Poczta:</div>
-                                <div><input type="text" name="poczta"></div>
+                                <div><input type="text" name="poczta" required></div>
                             </div>
 
                             <div class="formRow">
                                 <div>Telefon:</div>
-                                <div><input type="tel" name="telefon"></div>
+                                <div><input type="tel" name="telefon" required></div>
                             </div>
 
                             <div class="formRow">
                                 <div>Email:</div>
-                                <div><input type="email" name="email"></div>
+                                <div><input type="email" name="email" required></div>
                             </div>
                         </fieldset>
 
