@@ -69,6 +69,14 @@ if (isset($_POST['nazwa']))
                 <div class="formRow">
                     <label>Email <input type="email" name="email"></label>
                 </div>
+                
+                <div class="formRow">
+                    <input type="submit" value="Zapisz">
+                </div>
+                
+                <div class="formRow">
+                    <input type="reset" value="Resetuj">
+                </div>
             </form>
         </article>
     </main>
