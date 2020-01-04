@@ -15,6 +15,7 @@ if (isset($_POST['nazwa']))
     $telefon = $_POST['telefon'];
     $email = $_POST['email'];
     
+    /*
     //TEMP wyświetlenie danych
     echo "<p>{$nazwa}</p>";
     echo "<p>{$partner}</p>";
@@ -24,8 +25,43 @@ if (isset($_POST['nazwa']))
     echo "<p>{$poczta}</p>";
     echo "<p>{$telefon}</p>";
     echo "<p>{$email}</p>";
+    */
+    
+    //dane i ograniczenie rzucania błędani
+    require_once "connect.php";
+    mysqli_report(MYSQLI_REPORT_STRICT);
+    
+    try
+    {
+        //połączenie z BD
+        $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
+        //połączenie nieudane
+        if ($polaczenie->connect_errno != 0)
+        {
+            throw new Exception(mysqli_connect_errno());
+        }
+        //połączenie udane
+        else
+        {
+            //TEST POŁACZENIA
+            //obsługa polskich znaków
+            $polaczenie->set_charset("utf8");
+            //zapytanie
+            $zapytanie = 'SELECT * FROM klienci';
+            $wynik = $polaczenie->query($zapytanie);
+            $ile = $wynik->num_rows;
+            echo $ile;
+        }
+        //zamknięcie połączenia
+        $polaczenie->close();
+    }
+    catch(Exception $e)
+    {   
+        //komunikat o błędzie
+        echo '<b>ERROR!!!</b><br>';
+        echo $e;
+    }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +83,7 @@ if (isset($_POST['nazwa']))
                     <form method="post">
                         <div class="formRow">
                             <div>Nazwa:</div>
-                            <div><input type="text" name="nazwa" required></div>
+                            <div><input type="text" name="nazwa"></div>
                         </div>
 
                         <fieldset>
@@ -76,22 +112,22 @@ if (isset($_POST['nazwa']))
 
                             <div class="formRow">
                                 <div>Adres:</div>
-                                <div><input type="text" name="adres" required></div>
+                                <div><input type="text" name="adres"></div>
                             </div>
 
                             <div class="formRow">
                                 <div>Poczta:</div>
-                                <div><input type="text" name="poczta" required></div>
+                                <div><input type="text" name="poczta"></div>
                             </div>
 
                             <div class="formRow">
                                 <div>Telefon:</div>
-                                <div><input type="tel" name="telefon" required></div>
+                                <div><input type="tel" name="telefon"></div>
                             </div>
 
                             <div class="formRow">
                                 <div>Email:</div>
-                                <div><input type="email" name="email" required></div>
+                                <div><input type="email" name="email"></div>
                             </div>
                         </fieldset>
 

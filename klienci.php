@@ -30,6 +30,7 @@ try
 }
 catch(Exception $e)
 {
+    //komunikat o błędzie
     echo '<b>ERROR!!!</b><br>';
     echo $e;
 }
