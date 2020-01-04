@@ -78,9 +78,14 @@ catch(Exception $e)
                 <a href="klient_form.php">Dodaj wpis</a>
             </article>
         </main>
+        
         <article>
             <p><a href="index.php">Strona główna</a></p>
         </article>
+        
+        <footer>
+           <p>Zamowienia &copy; 2020</p>
+        </footer>
     </div>
 </body>
 </html>

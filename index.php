@@ -18,5 +18,9 @@
             </article>
         </main>
    </div>
+   
+   <footer>
+       <p>Zamowienia &copy; 2020</p>
+   </footer>
 </body>
 </html>
