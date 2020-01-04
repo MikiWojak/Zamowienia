@@ -1,3 +1,23 @@
+<?php
+//początek
+session_start();
+
+//czy formularz został przesłany
+if (isset($_POST['nazwa']))
+{
+    //pobranie danych z formularza
+    $nazwa = $_POST['nazwa'];
+    $partner = $_POST['partner'];
+    $imie = $_POST['imie'];
+    $nazwisko = $_POST['nazwisko'];
+    $adres = $_POST['adres'];
+    $poczta = $_POST['poczta'];
+    $telefon = $_POST['telefon'];
+    $email = $_POST['email'];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -12,7 +32,7 @@
     </header>
     <main>
         <article>
-            <form action="nowy_klient.php" method="post">
+            <form method="post">
                 <div class="formRow">
                     <label>Nazwa <input type="text" name="nazwa"></label>
                 </div>
