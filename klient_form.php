@@ -44,7 +44,7 @@ if (isset($_POST['nazwa']))
         <article>
             <form method="post">
                 <div class="formRow">
-                    <label>Nazwa <input type="text" name="nazwa"></label>
+                    <label>Nazwa <input type="text" name="nazwa" required></label>
                 </div>
                 
                 <div class="formRow">
