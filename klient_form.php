@@ -14,6 +14,16 @@ if (isset($_POST['nazwa']))
     $poczta = $_POST['poczta'];
     $telefon = $_POST['telefon'];
     $email = $_POST['email'];
+    
+    //TEMP wyświetlenie danych
+    echo "<p>{$nazwa}</p>";
+    echo "<p>{$partner}</p>";
+    echo "<p>{$imie}</p>";
+    echo "<p>{$nazwisko}</p>";
+    echo "<p>{$adres}</p>";
+    echo "<p>{$poczta}</p>";
+    echo "<p>{$telefon}</p>";
+    echo "<p>{$email}</p>";
 }
 
 ?>
