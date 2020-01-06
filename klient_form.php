@@ -53,6 +53,7 @@ if (isset($_POST['nazwa']))
     {   
         //komunikat o błędzie
         echo '<b>ERROR!!!</b><br>';
+        //INFORMACJA DEWELOPERSKA!
         echo $e;
     }
 }
