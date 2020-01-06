@@ -52,7 +52,7 @@ if (isset($_POST['nazwa']))
             $ile = $wynik->num_rows;
             echo $ile;
             
-            $status = '<p style="color:green;">Klient został pomyślnie dodany!</p>';
+            $status = '<p style="color:green; text-align: center;"><b>Klient został pomyślnie dodany!</b></p>';
         }
         //zamknięcie połączenia
         $polaczenie->close();
