@@ -51,6 +51,8 @@ if (isset($_POST['nazwa']))
             $wynik = $polaczenie->query($zapytanie);
             $ile = $wynik->num_rows;
             echo $ile;
+            
+            $status = '<p style="color:green;">Klient został pomyślnie dodany!</p>';
         }
         //zamknięcie połączenia
         $polaczenie->close();
@@ -81,6 +83,13 @@ if (isset($_POST['nazwa']))
         <main>
             <article>
                     <form method="post">
+                        <?php
+                            if (isset($status))
+                            {
+                                echo $status;
+                                unset($status);
+                            }
+                        ?>
                         <div class="formRow">
                             <div>Nazwa:</div>
                             <div><input type="text" name="nazwa"></div>
