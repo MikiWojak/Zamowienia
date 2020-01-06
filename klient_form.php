@@ -15,16 +15,6 @@ if (isset($_POST['nazwa']))
     $telefon = $_POST['telefon'];
     $email = $_POST['email'];
     
-    //TEMP wyświetlenie danych
-    echo "<p>{$nazwa}</p>";
-    echo "<p>{$partner}</p>";
-    echo "<p>{$imie}</p>";
-    echo "<p>{$nazwisko}</p>";
-    echo "<p>{$adres}</p>";
-    echo "<p>{$poczta}</p>";
-    echo "<p>{$telefon}</p>";
-    echo "<p>{$email}</p>";
-    
     //dane i ograniczenie rzucania błędani
     require_once "connect.php";
     mysqli_report(MYSQLI_REPORT_STRICT);
@@ -41,19 +31,18 @@ if (isset($_POST['nazwa']))
         //połączenie udane
         else
         {
-            //TEST POŁACZENIA
             //obsługa polskich znaków
             $polaczenie->set_charset("utf8");
             //zapytanie
-            $zapytanie = "INSERT INTO klienci VALUES (NULL, '$nazwa', '$partner', '$imie', '$nazwisko', '$adres', '$poczta', '$telefon', $email)";
+            $zapytanie = "INSERT INTO klienci VALUES (NULL, '$nazwa', '$partner', '$imie', '$nazwisko', '$adres', '$poczta', '$telefon', '$email')";
             
+            //rezultat zapytania
             if ($polaczenie->query($zapytanie))
             {
                 $status = '<p style="color:green; text-align: center;"><b>Klient został pomyślnie dodany!</b></p>';
             }
             else
             {
-                echo $polaczenie->error;
                 $status = '<p style="color:red; text-align: center;"><b>Coś poszło nie tak...</b></p>';
             }
         }
