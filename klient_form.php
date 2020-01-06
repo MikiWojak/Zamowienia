@@ -15,7 +15,6 @@ if (isset($_POST['nazwa']))
     $telefon = $_POST['telefon'];
     $email = $_POST['email'];
     
-    /*
     //TEMP wyświetlenie danych
     echo "<p>{$nazwa}</p>";
     echo "<p>{$partner}</p>";
@@ -25,7 +24,6 @@ if (isset($_POST['nazwa']))
     echo "<p>{$poczta}</p>";
     echo "<p>{$telefon}</p>";
     echo "<p>{$email}</p>";
-    */
     
     //dane i ograniczenie rzucania błędani
     require_once "connect.php";
@@ -47,12 +45,17 @@ if (isset($_POST['nazwa']))
             //obsługa polskich znaków
             $polaczenie->set_charset("utf8");
             //zapytanie
-            $zapytanie = 'SELECT * FROM klienci';
-            $wynik = $polaczenie->query($zapytanie);
-            $ile = $wynik->num_rows;
-            echo $ile;
+            $zapytanie = "INSERT INTO klienci VALUES (NULL, '$nazwa', '$partner', '$imie', '$nazwisko', '$adres', '$poczta', '$telefon', $email)";
             
-            $status = '<p style="color:green; text-align: center;"><b>Klient został pomyślnie dodany!</b></p>';
+            if ($polaczenie->query($zapytanie))
+            {
+                $status = '<p style="color:green; text-align: center;"><b>Klient został pomyślnie dodany!</b></p>';
+            }
+            else
+            {
+                echo $polaczenie->error;
+                $status = '<p style="color:red; text-align: center;"><b>Coś poszło nie tak...</b></p>';
+            }
         }
         //zamknięcie połączenia
         $polaczenie->close();
