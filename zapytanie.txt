@@ -1,0 +1,8 @@
+SELECT * FROM `klienci` WHERE
+	nazwa_klienta LIKE "%Jan%" OR
+    imie_klienta LIKE "%Jan%" OR
+    nazwisko_klienta LIKE "%Jan%" OR
+    adres_klienta LIKE "%Jan%" OR
+    poczta_klienta LIKE "%Jan%" OR
+    tel_klienta LIKE "%Jan%" OR
+    email_klienta LIKE "%Jan%"
