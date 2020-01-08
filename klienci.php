@@ -20,10 +20,21 @@ try
     {
         //obsługa polskich znaków
         $polaczenie->set_charset("utf8");
+        /*
         //zapytanie
         $zapytanie = 'SELECT * FROM klienci';
         $wynik = $polaczenie->query($zapytanie);
-        //$wiersz = mysqli_fetch_array($wynik);
+        */
+        //$fraza = "Jan";
+        $zapytanie = 'SELECT * FROM `klienci` WHERE
+            nazwa_klienta LIKE "%Jan%" OR
+            imie_klienta LIKE "%Jan%" OR
+            nazwisko_klienta LIKE "%Jan%" OR
+            adres_klienta LIKE "%Jan%" OR
+            poczta_klienta LIKE "%Jan%" OR
+            tel_klienta LIKE "%Jan%" OR
+            email_klienta LIKE "%Jan%"';
+        $wynik = $polaczenie->query($zapytanie);
     }
     //zamknięcie połączenia
     $polaczenie->close();
