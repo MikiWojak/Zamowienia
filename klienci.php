@@ -52,6 +52,13 @@ catch(Exception $e)
     
     <div class="container">
        <main>
+            <article>
+                <form method="post">
+                    <input type="text" name="fraza">
+                    <input type="submit" value="Szukaj">
+                </form>    
+            </article>
+            
            <article>
                 <table>
                     <thead>
