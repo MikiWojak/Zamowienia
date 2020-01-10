@@ -80,10 +80,15 @@ catch(Exception $e)
             </article>
             
            <article>
+               <!--Ukryty formularz-->
+               <form action="" method="post" style="display: none;" id="send">
+                    <input type="text" name="cos" value="cos_val">
+               </form>
+               
                 <table>
                     <thead>
                         <tr>
-                            <th>Nazwa</th>
+                            <th><a href="#" onclick="document.getElementById('send').submit()">Nazwa</a></th>
                             <th>Partner</th>
                             <th>Imię</th>
                             <th>Nazwisko</th>
@@ -105,6 +110,15 @@ catch(Exception $e)
             </article>
             <article>
                 <a href="klient_form.php">Dodaj wpis</a>
+            </article>
+            
+            <article>
+                <?php
+                    if (isset($_POST['cos']))
+                    {
+                        echo $_POST['cos'];
+                    }
+                ?>
             </article>
         </main>
         
