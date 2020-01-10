@@ -20,11 +20,7 @@ try
     {
         //obsługa polskich znaków
         $polaczenie->set_charset("utf8");
-        /*
-        //zapytanie
-        $zapytanie = 'SELECT * FROM klienci';
-        $wynik = $polaczenie->query($zapytanie);
-        */
+        
         if (isset($_POST['fraza']))
         {
             //pobranie frazy z okienka
@@ -38,10 +34,16 @@ try
                 poczta_klienta LIKE '%$fraza%' OR
                 tel_klienta LIKE '%$fraza%' OR
                 email_klienta LIKE '%$fraza%'";
-            $wynik = $polaczenie->query($zapytanie);
+            unset($_POST['fraza']);
+            unset($fraza);
         }
-        
-        
+        else
+        {
+            //zapytanie ogolne
+            $zapytanie = 'SELECT * FROM klienci';
+            
+        }
+        $wynik = $polaczenie->query($zapytanie);
     }
     //zamknięcie połączenia
     $polaczenie->close();
