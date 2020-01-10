@@ -34,8 +34,6 @@ try
                 poczta_klienta LIKE '%$fraza%' OR
                 tel_klienta LIKE '%$fraza%' OR
                 email_klienta LIKE '%$fraza%'";
-            unset($_POST['fraza']);
-            unset($fraza);
         }
         else
         {
