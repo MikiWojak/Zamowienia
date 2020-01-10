@@ -25,16 +25,23 @@ try
         $zapytanie = 'SELECT * FROM klienci';
         $wynik = $polaczenie->query($zapytanie);
         */
-        $fraza = "Marciniak";
-        $zapytanie = "SELECT * FROM klienci WHERE
-            nazwa_klienta LIKE '%$fraza%' OR
-            imie_klienta LIKE '%$fraza%' OR
-            nazwisko_klienta LIKE '%$fraza%' OR
-            adres_klienta LIKE '%$fraza%' OR
-            poczta_klienta LIKE '%$fraza%' OR
-            tel_klienta LIKE '%$fraza%' OR
-            email_klienta LIKE '%$fraza%'";
-        $wynik = $polaczenie->query($zapytanie);
+        if (isset($_POST['fraza']))
+        {
+            //pobranie frazy z okienka
+            $fraza = $_POST['fraza'];
+            //wyniki z fraza
+            $zapytanie = "SELECT * FROM klienci WHERE
+                nazwa_klienta LIKE '%$fraza%' OR
+                imie_klienta LIKE '%$fraza%' OR
+                nazwisko_klienta LIKE '%$fraza%' OR
+                adres_klienta LIKE '%$fraza%' OR
+                poczta_klienta LIKE '%$fraza%' OR
+                tel_klienta LIKE '%$fraza%' OR
+                email_klienta LIKE '%$fraza%'";
+            $wynik = $polaczenie->query($zapytanie);
+        }
+        
+        
     }
     //zamknięcie połączenia
     $polaczenie->close();
