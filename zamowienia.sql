@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 10 Sty 2020, 17:21
+-- Czas generowania: 10 Sty 2020, 17:50
 -- Wersja serwera: 10.4.10-MariaDB
 -- Wersja PHP: 7.3.12
 
@@ -54,7 +54,8 @@ INSERT INTO `klienci` (`id_klienta`, `nazwa_klienta`, `czy_partner`, `imie_klien
 (8, 'Natalia Marciniak', 'nie', 'Natalia', 'Marciniak', 'ul. Nad Stawami 72', '34-200 Sucha Beskidzka', '046272127', 'nat-marciniak@gmail.com'),
 (9, 'Tadeusz Adamski', 'nie', 'Tadeusz', 'Adamski', 'Grzechynia 278', '34-220 Maków Podhalański', '954263192', 'tadek-adamski@onet.pl'),
 (10, 'Edward Nowak', 'nie', 'Edward', 'Nowak', 'ul. 3 Maja 11/5', '34-220 Maków Podhalański', '843232120', 'edek.nowak@gmail.com'),
-(11, 'Magdalena Rzecka', 'nie', 'Magdalena', 'Rzecka', 'ul. Boczna 9/3', '34-200 Sucha Beskidzka', '344293121', 'magda-rzecka@wp.pl');
+(11, 'Magdalena Rzecka', 'nie', 'Magdalena', 'Rzecka', 'ul. Boczna 9/3', '34-200 Sucha Beskidzka', '344293121', 'magda-rzecka@wp.pl'),
+(12, 'Martyna Wójcik', 'nie', 'Martyna', 'Wójcik', 'Zawoja 97', '34-250 Zawoja', '937128199', 'marti.wojcik@wp.pl');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -74,7 +75,7 @@ ALTER TABLE `klienci`
 -- AUTO_INCREMENT dla tabeli `klienci`
 --
 ALTER TABLE `klienci`
-  MODIFY `id_klienta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_klienta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
