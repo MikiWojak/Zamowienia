@@ -27,13 +27,13 @@ try
         */
         //$fraza = "Jan";
         $zapytanie = 'SELECT * FROM `klienci` WHERE
-            nazwa_klienta LIKE "%Jan%" OR
-            imie_klienta LIKE "%Jan%" OR
-            nazwisko_klienta LIKE "%Jan%" OR
-            adres_klienta LIKE "%Jan%" OR
-            poczta_klienta LIKE "%Jan%" OR
-            tel_klienta LIKE "%Jan%" OR
-            email_klienta LIKE "%Jan%"';
+            nazwa_klienta LIKE "%Nowak%" OR
+            imie_klienta LIKE "%Nowak%" OR
+            nazwisko_klienta LIKE "%Nowak%" OR
+            adres_klienta LIKE "%Nowak%" OR
+            poczta_klienta LIKE "%Nowak%" OR
+            tel_klienta LIKE "%Nowak%" OR
+            email_klienta LIKE "%Nowak%"';
         $wynik = $polaczenie->query($zapytanie);
     }
     //zamknięcie połączenia
