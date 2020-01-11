@@ -2,6 +2,9 @@
 //początek
 session_start();
 
+//wyswietlanie nazw
+if (isset($_POST['nazwa_klienta'])) echo $_POST['nazwa_klienta'];
+
 //dane i ograniczenie rzucania błędani
 require_once "connect.php";
 mysqli_report(MYSQLI_REPORT_STRICT);
@@ -81,14 +84,14 @@ catch(Exception $e)
             
            <article>
                <!--Ukryty formularz-->
-               <form action="" method="post" style="display: none;" id="send">
-                    <input type="text" name="cos" value="cos_val">
+               <form action="" method="post" id="nazwa_klienta">
+                    <input type="hidden" name="nazwa_klienta" value="nazwa_klienta">
                </form>
                
                 <table>
                     <thead>
                         <tr>
-                            <th><a href="#" onclick="document.getElementById('send').submit()">Nazwa</a></th>
+                            <th><a href="#" onclick="document.getElementById('nazwa_klienta').submit()">Nazwa</a></th>
                             <th>Partner</th>
                             <th>Imię</th>
                             <th>Nazwisko</th>
@@ -110,15 +113,6 @@ catch(Exception $e)
             </article>
             <article>
                 <a href="klient_form.php">Dodaj wpis</a>
-            </article>
-            
-            <article>
-                <?php
-                    if (isset($_POST['cos']))
-                    {
-                        echo $_POST['cos'];
-                    }
-                ?>
             </article>
         </main>
         
