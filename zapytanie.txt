@@ -6,3 +6,6 @@ SELECT * FROM `klienci` WHERE
     poczta_klienta LIKE "%Jan%" OR
     tel_klienta LIKE "%Jan%" OR
     email_klienta LIKE "%Jan%"
+    
+SELECT * FROM klienci ORDER BY imie_klienta
+SELECT * FROM klienci ORDER BY nazwisko_klienta DESC
