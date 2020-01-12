@@ -3,7 +3,7 @@
 session_start();
 
 //wyswietlanie nazw
-if (isset($_POST['nazwa_klienta'])) echo $_POST['nazwa_klienta'];
+if (isset($_POST['nazwa_klienta'])) echo "Nazwa klienta";
 
 //dane i ograniczenie rzucania błędani
 require_once "connect.php";
@@ -84,14 +84,16 @@ catch(Exception $e)
             
            <article>
                <!--Ukryty formularz-->
-               <form action="" method="post" id="nazwa_klienta">
-                    <input type="hidden" name="nazwa_klienta" value="nazwa_klienta">
-               </form>
                
                 <table>
                     <thead>
                         <tr>
-                            <th><a href="#" onclick="document.getElementById('nazwa_klienta').submit()">Nazwa</a></th>
+                            <th>
+                                <form method="post">
+                                    <input type="hidden" name="nazwa_klienta">
+                                    <input type="submit" value="Nazwa">
+                                </form>
+                            </th>
                             <th>Partner</th>
                             <th>Imię</th>
                             <th>Nazwisko</th>
