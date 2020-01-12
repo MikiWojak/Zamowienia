@@ -1,40 +1,65 @@
 <?php
+
+$_SESSION['czy_rosnaco'] = false;
+
 //początek
 session_start();
+
+//TEMP
+echo "Przed ".$_SESSION['czy_rosnaco'];
 
 //wyswietlanie nazw
 if (isset($_POST['nazwa_klienta'])) 
 {
     $sortowanie = "ORDER BY nazwa_klienta";
+    if($_SESSION['czy_rosnaco']) $_SESSION['czy_rosnaco'] = false;
+    else $_SESSION['czy_rosnaco'] = true;
 }
 if (isset($_POST['czy_partner']))
 {
     $sortowanie = "ORDER BY czy_partner";
+    if($_SESSION['czy_rosnaco']) $_SESSION['czy_rosnaco'] = false;
+    else $_SESSION['czy_rosnaco'] = true;  
 }
 if (isset($_POST['imie_klienta']))
 {
     $sortowanie = "ORDER BY imie_klienta";
+    if($_SESSION['czy_rosnaco']) $_SESSION['czy_rosnaco'] = false;
+    else $_SESSION['czy_rosnaco'] = true;
 }
 if (isset($_POST['nazwisko_klienta']))
 {
     $sortowanie = "ORDER BY nazwisko_klienta";
+    if($_SESSION['czy_rosnaco']) $_SESSION['czy_rosnaco'] = false;
+    else $_SESSION['czy_rosnaco'] = true;
 }
 if (isset($_POST['adres_klienta']))
 {
     $sortowanie = "ORDER BY adres_klienta";
+    if($_SESSION['czy_rosnaco']) $_SESSION['czy_rosnaco'] = false;
+    else $_SESSION['czy_rosnaco'] = true;
 }
 if (isset($_POST['poczta_klienta']))
 {
     $sortowanie = "ORDER BY poczta_klienta";
+    if($_SESSION['czy_rosnaco']) $_SESSION['czy_rosnaco'] = false;
+    else $_SESSION['czy_rosnaco'] = true;
 }
 if (isset($_POST['telefon_klienta']))
 {
     $sortowanie = "ORDER BY tel_klienta";
+    if($_SESSION['czy_rosnaco']) $_SESSION['czy_rosnaco'] = false;
+    else $_SESSION['czy_rosnaco'] = true;
 }
 if (isset($_POST['email_klienta']))
 {
     $sortowanie = "ORDER BY email_klienta";
+    if($_SESSION['czy_rosnaco']) $_SESSION['czy_rosnaco'] = false;
+    else $_SESSION['czy_rosnaco'] = true;
 }
+
+//TEMP
+echo "<br>Po ".$_SESSION['czy_rosnaco'];
 
 //dane i ograniczenie rzucania błędani
 require_once "connect.php";
@@ -76,6 +101,7 @@ try
             
         }
         if (isset($sortowanie)) { $zapytanie = $zapytanie." ".$sortowanie; }
+        if (!$_SESSION['czy_rosnaco']) { $zapytanie = $zapytanie." DESC"; }
         
         $wynik = $polaczenie->query($zapytanie);
     }
