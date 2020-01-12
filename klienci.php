@@ -3,14 +3,38 @@
 session_start();
 
 //wyswietlanie nazw
-if (isset($_POST['nazwa_klienta'])) echo "Nazwa";
-if (isset($_POST['czy_partner'])) echo "Partner";
-if (isset($_POST['imie_klienta'])) echo "Imie";
-if (isset($_POST['nazwisko_klienta'])) echo "Nazwisko";
-if (isset($_POST['adres_klienta'])) echo "Adres";
-if (isset($_POST['poczta_klienta'])) echo "Poczta";
-if (isset($_POST['telefon_klienta'])) echo "Telefon";
-if (isset($_POST['email_klienta'])) echo "Email";
+if (isset($_POST['nazwa_klienta'])) 
+{
+    $sortowanie = "ORDER BY nazwa_klienta";
+}
+if (isset($_POST['czy_partner']))
+{
+    $sortowanie = "ORDER BY czy_partner";
+}
+if (isset($_POST['imie_klienta']))
+{
+    $sortowanie = "ORDER BY imie_klienta";
+}
+if (isset($_POST['nazwisko_klienta']))
+{
+    $sortowanie = "ORDER BY nazwisko_klienta";
+}
+if (isset($_POST['adres_klienta']))
+{
+    $sortowanie = "ORDER BY adres_klienta";
+}
+if (isset($_POST['poczta_klienta']))
+{
+    $sortowanie = "ORDER BY poczta_klienta";
+}
+if (isset($_POST['telefon_klienta']))
+{
+    $sortowanie = "ORDER BY tel_klienta";
+}
+if (isset($_POST['email_klienta']))
+{
+    $sortowanie = "ORDER BY email_klienta";
+}
 
 //dane i ograniczenie rzucania błędani
 require_once "connect.php";
@@ -51,6 +75,8 @@ try
             $zapytanie = 'SELECT * FROM klienci';
             
         }
+        if (isset($sortowanie)) { $zapytanie = $zapytanie." ".$sortowanie; }
+        
         $wynik = $polaczenie->query($zapytanie);
     }
     //zamknięcie połączenia
