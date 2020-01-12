@@ -3,7 +3,14 @@
 session_start();
 
 //wyswietlanie nazw
-if (isset($_POST['nazwa_klienta'])) echo "Nazwa klienta";
+if (isset($_POST['nazwa_klienta'])) echo "Nazwa";
+if (isset($_POST['czy_partner'])) echo "Partner";
+if (isset($_POST['imie_klienta'])) echo "Imie";
+if (isset($_POST['nazwisko_klienta'])) echo "Nazwisko";
+if (isset($_POST['adres_klienta'])) echo "Adres";
+if (isset($_POST['poczta_klienta'])) echo "Poczta";
+if (isset($_POST['telefon_klienta'])) echo "Telefon";
+if (isset($_POST['email_klienta'])) echo "Email";
 
 //dane i ograniczenie rzucania błędani
 require_once "connect.php";
@@ -94,13 +101,48 @@ catch(Exception $e)
                                     <input type="submit" value="Nazwa">
                                 </form>
                             </th>
-                            <th>Partner</th>
-                            <th>Imię</th>
-                            <th>Nazwisko</th>
-                            <th>Adres</th>
-                            <th>Poczta</th>
-                            <th>Telefon</th>
-                            <th>Email</th>
+                            <th>
+                                <form method="post">
+                                    <input type="hidden" name="czy_partner">
+                                    <input type="submit" value="Partner">
+                                </form>
+                            </th>
+                            <th>
+                                <form method="post">
+                                    <input type="hidden" name="imie_klienta">
+                                    <input type="submit" value="Imię">
+                                </form>
+                            </th>
+                            <th>
+                                <form method="post">
+                                    <input type="hidden" name="nazwisko_klienta">
+                                    <input type="submit" value="Nazwisko">
+                                </form>
+                            </th>
+                            <th>
+                                <form method="post">
+                                    <input type="hidden" name="adres_klienta">
+                                    <input type="submit" value="Adres">
+                                </form>
+                            </th>
+                            <th>
+                                <form method="post">
+                                    <input type="hidden" name="poczta_klienta">
+                                    <input type="submit" value="Poczta">
+                                </form>
+                            </th>
+                            <th>
+                                <form method="post">
+                                    <input type="hidden" name="telefon_klienta">
+                                    <input type="submit" value="Telefon">
+                                </form>
+                            </th>
+                            <th>
+                                <form method="post">
+                                    <input type="hidden" name="email_klienta">
+                                    <input type="submit" value="Email">
+                                </form>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
