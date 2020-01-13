@@ -1,9 +1,9 @@
 <?php
 
-$_SESSION['czy_rosnaco'] = false;
-
 //początek
 session_start();
+
+if (!isset($_SESSION['czy_rosnaco'])) { $_SESSION['czy_rosnaco'] = false; }
 
 //TEMP
 echo "Przed ".$_SESSION['czy_rosnaco'];
@@ -101,7 +101,7 @@ try
             
         }
         if (isset($sortowanie)) { $zapytanie = $zapytanie." ".$sortowanie; }
-        if (!$_SESSION['czy_rosnaco']) { $zapytanie = $zapytanie." DESC"; }
+        if (isset($sortowanie) && $_SESSION['czy_rosnaco'] == false) { $zapytanie = $zapytanie." DESC"; }
         
         $wynik = $polaczenie->query($zapytanie);
     }
