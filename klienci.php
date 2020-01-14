@@ -2,64 +2,57 @@
 
 //początek
 session_start();
+include 'funkcje.php';
 
 if (!isset($_SESSION['czy_rosnaco'])) { $_SESSION['czy_rosnaco'] = false; }
 
 //TEMP
-echo "Przed ".$_SESSION['czy_rosnaco'];
+echo "<p>Przed ".$_SESSION['czy_rosnaco']."</p>";
 
 //sortowanie rekordow
 if (isset($_POST['nazwa_klienta'])) 
 {
     $sortowanie = "nazwa_klienta";
-    if($_SESSION['czy_rosnaco']) $_SESSION['czy_rosnaco'] = false;
-    else $_SESSION['czy_rosnaco'] = true;
+    $_SESSION['czy_rosnaco'] = zmiana_flagi($_SESSION['czy_rosnaco']);
 }
 if (isset($_POST['czy_partner']))
 {
     $sortowanie = "czy_partner";
-    if($_SESSION['czy_rosnaco']) $_SESSION['czy_rosnaco'] = false;
-    else $_SESSION['czy_rosnaco'] = true;  
+    $_SESSION['czy_rosnaco'] = zmiana_flagi($_SESSION['czy_rosnaco']);
 }
 if (isset($_POST['imie_klienta']))
 {
     $sortowanie = "imie_klienta";
-    if($_SESSION['czy_rosnaco']) $_SESSION['czy_rosnaco'] = false;
-    else $_SESSION['czy_rosnaco'] = true;
+    $_SESSION['czy_rosnaco'] = zmiana_flagi($_SESSION['czy_rosnaco']);
 }
 if (isset($_POST['nazwisko_klienta']))
 {
     $sortowanie = "nazwisko_klienta";
-    if($_SESSION['czy_rosnaco']) $_SESSION['czy_rosnaco'] = false;
-    else $_SESSION['czy_rosnaco'] = true;
+    $_SESSION['czy_rosnaco'] = zmiana_flagi($_SESSION['czy_rosnaco']);
 }
 if (isset($_POST['adres_klienta']))
 {
     $sortowanie = "adres_klienta";
-    if($_SESSION['czy_rosnaco']) $_SESSION['czy_rosnaco'] = false;
-    else $_SESSION['czy_rosnaco'] = true;
+    $_SESSION['czy_rosnaco'] = zmiana_flagi($_SESSION['czy_rosnaco']);
 }
 if (isset($_POST['poczta_klienta']))
 {
     $sortowanie = "poczta_klienta";
-    if($_SESSION['czy_rosnaco']) $_SESSION['czy_rosnaco'] = false;
-    else $_SESSION['czy_rosnaco'] = true;
+    $_SESSION['czy_rosnaco'] = zmiana_flagi($_SESSION['czy_rosnaco']);
 }
 if (isset($_POST['telefon_klienta']))
 {
     $sortowanie = "tel_klienta";
-    if($_SESSION['czy_rosnaco']) $_SESSION['czy_rosnaco'] = false;
-    else $_SESSION['czy_rosnaco'] = true;
+    $_SESSION['czy_rosnaco'] = zmiana_flagi($_SESSION['czy_rosnaco']);
 }
 if (isset($_POST['email_klienta']))
 {
     $sortowanie = "email_klienta";
-    if($_SESSION['czy_rosnaco']) $_SESSION['czy_rosnaco'] = false;
-    else $_SESSION['czy_rosnaco'] = true;
+    $_SESSION['czy_rosnaco'] = zmiana_flagi($_SESSION['czy_rosnaco']);
 }
 
 //TEMP
-echo "<br>Po ".$_SESSION['czy_rosnaco'];
+echo "<p>Po ".$_SESSION['czy_rosnaco']."</p>";
 
 //dane i ograniczenie rzucania błędani
 require_once "connect.php";
