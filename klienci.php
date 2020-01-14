@@ -2,7 +2,6 @@
 
 //początek
 session_start();
-include 'funkcje.php';
 
 if (!isset($_SESSION['czy_rosnaco'])) { $_SESSION['czy_rosnaco'] = false; }
 
@@ -13,42 +12,42 @@ echo "<p>Przed ".$_SESSION['czy_rosnaco']."</p>";
 if (isset($_POST['nazwa_klienta'])) 
 {
     $sortowanie = "nazwa_klienta";
-    $_SESSION['czy_rosnaco'] = zmiana_flagi($_SESSION['czy_rosnaco']);
+    $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
 }
 if (isset($_POST['czy_partner']))
 {
     $sortowanie = "czy_partner";
-    $_SESSION['czy_rosnaco'] = zmiana_flagi($_SESSION['czy_rosnaco']);
+    $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
 }
 if (isset($_POST['imie_klienta']))
 {
     $sortowanie = "imie_klienta";
-    $_SESSION['czy_rosnaco'] = zmiana_flagi($_SESSION['czy_rosnaco']);
+    $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
 }
 if (isset($_POST['nazwisko_klienta']))
 {
     $sortowanie = "nazwisko_klienta";
-    $_SESSION['czy_rosnaco'] = zmiana_flagi($_SESSION['czy_rosnaco']);
+    $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
 }
 if (isset($_POST['adres_klienta']))
 {
     $sortowanie = "adres_klienta";
-    $_SESSION['czy_rosnaco'] = zmiana_flagi($_SESSION['czy_rosnaco']);
+    $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
 }
 if (isset($_POST['poczta_klienta']))
 {
     $sortowanie = "poczta_klienta";
-    $_SESSION['czy_rosnaco'] = zmiana_flagi($_SESSION['czy_rosnaco']);
+    $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
 }
 if (isset($_POST['telefon_klienta']))
 {
     $sortowanie = "tel_klienta";
-    $_SESSION['czy_rosnaco'] = zmiana_flagi($_SESSION['czy_rosnaco']);
+    $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
 }
 if (isset($_POST['email_klienta']))
 {
     $sortowanie = "email_klienta";
-    $_SESSION['czy_rosnaco'] = zmiana_flagi($_SESSION['czy_rosnaco']);
+    $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
 }
 
 //TEMP
