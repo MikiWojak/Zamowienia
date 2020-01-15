@@ -10,7 +10,8 @@ if (!isset($_SESSION['sort_kryt'])) $_SESSION['sort_kryt'] = "";
 echo "<p>Przed ".$_SESSION['czy_rosnaco']."</p>";
 
 //sortowanie rekordow
-if (isset($_POST['nazwa_klienta']))     //nazwa_klienta
+//nazwa_klienta
+if (isset($_POST['nazwa_klienta']))
 {
     if ($_SESSION['sort_kryt'] != "nazwa_klienta")
     {
@@ -22,10 +23,21 @@ if (isset($_POST['nazwa_klienta']))     //nazwa_klienta
         $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
     }
 }
-if (isset($_POST['czy_partner']))       //czy_partner
+//czy_partner
+if (isset($_POST['czy_partner']))
 {
+    if ($_SESSION['sort_kryt'] != "czy_partner")
+    {
+        $_SESSION['sort_kryt'] = "czy_partner";
+        $_SESSION['czy_rosnaco'] = true;
+    }
+    else
+    {
+        $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
+    }
 }
-if (isset($_POST['imie_klienta']))      //imie_klienta
+//imie_klienta
+if (isset($_POST['imie_klienta']))
 {
     if ($_SESSION['sort_kryt'] != "imie_klienta")
     {
@@ -37,7 +49,8 @@ if (isset($_POST['imie_klienta']))      //imie_klienta
         $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
     }
 }
-if (isset($_POST['nazwisko_klienta']))  //nazwisko_klienta
+//nazwisko_klienta
+if (isset($_POST['nazwisko_klienta']))
 {
     if ($_SESSION['sort_kryt'] != "nazwisko_klienta")
     {
@@ -49,17 +62,55 @@ if (isset($_POST['nazwisko_klienta']))  //nazwisko_klienta
         $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
     }
 }
-if (isset($_POST['adres_klienta']))     //adres_klienta
+//adres_klienta
+if (isset($_POST['adres_klienta']))
 {
+    if ($_SESSION['sort_kryt'] != "adres_klienta")
+    {
+        $_SESSION['sort_kryt'] = "adres_klienta";
+        $_SESSION['czy_rosnaco'] = true;
+    }
+    else
+    {
+        $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
+    }
 }
-if (isset($_POST['poczta_klienta']))    //poczta_klienta
+//poczta_klienta
+if (isset($_POST['poczta_klienta']))
 {
+    if ($_SESSION['sort_kryt'] != "poczta_klienta")
+    {
+        $_SESSION['sort_kryt'] = "poczta_klienta";
+        $_SESSION['czy_rosnaco'] = true;
+    }
+    else
+    {
+        $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
+    }
 }
 if (isset($_POST['telefon_klienta']))   //telefon_klienta
 {
+    if ($_SESSION['sort_kryt'] != "tel_klienta")
+    {
+        $_SESSION['sort_kryt'] = "tel_klienta";
+        $_SESSION['czy_rosnaco'] = true;
+    }
+    else
+    {
+        $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
+    }
 }
 if (isset($_POST['email_klienta']))     //email_klienta
 {
+    if ($_SESSION['sort_kryt'] != "email_klienta")
+    {
+        $_SESSION['sort_kryt'] = "email_klienta";
+        $_SESSION['czy_rosnaco'] = true;
+    }
+    else
+    {
+        $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
+    }
 }
 
 //TEMP
