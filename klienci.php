@@ -3,55 +3,38 @@
 //początek
 session_start();
 
-if (!isset($_SESSION['czy_rosnaco'])) { $_SESSION['czy_rosnaco'] = false; }
 
 //TEMP
-echo "<p>Przed ".$_SESSION['czy_rosnaco']."</p>";
+//echo "<p>Przed ".$_SESSION['czy_rosnaco']."</p>";
 
 //sortowanie rekordow
 if (isset($_POST['nazwa_klienta'])) 
 {
-    $sortowanie = "nazwa_klienta";
-    $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
 }
 if (isset($_POST['czy_partner']))
 {
-    $sortowanie = "czy_partner";
-    $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
 }
 if (isset($_POST['imie_klienta']))
 {
-    $sortowanie = "imie_klienta";
-    $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
 }
 if (isset($_POST['nazwisko_klienta']))
 {
-    $sortowanie = "nazwisko_klienta";
-    $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
 }
 if (isset($_POST['adres_klienta']))
 {
-    $sortowanie = "adres_klienta";
-    $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
 }
 if (isset($_POST['poczta_klienta']))
 {
-    $sortowanie = "poczta_klienta";
-    $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
 }
 if (isset($_POST['telefon_klienta']))
 {
-    $sortowanie = "tel_klienta";
-    $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
 }
 if (isset($_POST['email_klienta']))
 {
-    $sortowanie = "email_klienta";
-    $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
 }
 
 //TEMP
-echo "<p>Po ".$_SESSION['czy_rosnaco']."</p>";
+//echo "<p>Po ".$_SESSION['czy_rosnaco']."</p>";
 
 //dane i ograniczenie rzucania błędani
 require_once "connect.php";
@@ -92,8 +75,6 @@ try
             $zapytanie = 'SELECT * FROM klienci';
             
         }
-        if (isset($sortowanie)) { $zapytanie = $zapytanie." ORDER BY ".$sortowanie; }
-        if (isset($sortowanie) && $_SESSION['czy_rosnaco'] == false) { $zapytanie = $zapytanie." DESC"; }
         
         $wynik = $polaczenie->query($zapytanie);
     }
