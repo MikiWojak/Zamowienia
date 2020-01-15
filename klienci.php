@@ -12,15 +12,42 @@ echo "<p>Przed ".$_SESSION['czy_rosnaco']."</p>";
 //sortowanie rekordow
 if (isset($_POST['nazwa_klienta']))     //nazwa_klienta
 {
+    if ($_SESSION['sort_kryt'] != "nazwa_klienta")
+    {
+        $_SESSION['sort_kryt'] = "nazwa_klienta";
+        $_SESSION['czy_rosnaco'] = true;
+    }
+    else
+    {
+        $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
+    }
 }
 if (isset($_POST['czy_partner']))       //czy_partner
 {
 }
 if (isset($_POST['imie_klienta']))      //imie_klienta
 {
+    if ($_SESSION['sort_kryt'] != "imie_klienta")
+    {
+        $_SESSION['sort_kryt'] = "imie_klienta";
+        $_SESSION['czy_rosnaco'] = true;
+    }
+    else
+    {
+        $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
+    }
 }
 if (isset($_POST['nazwisko_klienta']))  //nazwisko_klienta
 {
+    if ($_SESSION['sort_kryt'] != "nazwisko_klienta")
+    {
+        $_SESSION['sort_kryt'] = "nazwisko_klienta";
+        $_SESSION['czy_rosnaco'] = true;
+    }
+    else
+    {
+        $_SESSION['czy_rosnaco'] = !$_SESSION['czy_rosnaco'];
+    }
 }
 if (isset($_POST['adres_klienta']))     //adres_klienta
 {
@@ -76,6 +103,17 @@ try
             //zapytanie ogolne
             $zapytanie = 'SELECT * FROM klienci';
             
+        }
+        
+        //sortowanie
+        if ($_SESSION['sort_kryt'] != "")
+        {
+            $zapytanie = $zapytanie." ORDER BY ".$_SESSION['sort_kryt'];
+            
+            if (!$_SESSION['czy_rosnaco'])
+            {
+                $zapytanie = $zapytanie." DESC";
+            }
         }
         
         $wynik = $polaczenie->query($zapytanie);
