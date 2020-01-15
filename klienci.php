@@ -3,33 +3,35 @@
 //początek
 session_start();
 
+if (!isset($_SESSION['czy_rosnaco'])) $_SESSION['czy_rosnaco'] = true;
+if (!isset($_SESSION['sort_kryt'])) $_SESSION['sort_kryt'] = "";
 
 //TEMP
-//echo "<p>Przed ".$_SESSION['czy_rosnaco']."</p>";
+echo "<p>Przed ".$_SESSION['czy_rosnaco']."</p>";
 
 //sortowanie rekordow
-if (isset($_POST['nazwa_klienta'])) 
+if (isset($_POST['nazwa_klienta']))     //nazwa_klienta
 {
 }
-if (isset($_POST['czy_partner']))
+if (isset($_POST['czy_partner']))       //czy_partner
 {
 }
-if (isset($_POST['imie_klienta']))
+if (isset($_POST['imie_klienta']))      //imie_klienta
 {
 }
-if (isset($_POST['nazwisko_klienta']))
+if (isset($_POST['nazwisko_klienta']))  //nazwisko_klienta
 {
 }
-if (isset($_POST['adres_klienta']))
+if (isset($_POST['adres_klienta']))     //adres_klienta
 {
 }
-if (isset($_POST['poczta_klienta']))
+if (isset($_POST['poczta_klienta']))    //poczta_klienta
 {
 }
-if (isset($_POST['telefon_klienta']))
+if (isset($_POST['telefon_klienta']))   //telefon_klienta
 {
 }
-if (isset($_POST['email_klienta']))
+if (isset($_POST['email_klienta']))     //email_klienta
 {
 }
 
