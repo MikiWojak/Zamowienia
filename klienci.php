@@ -6,6 +6,9 @@ session_start();
 if (!isset($_SESSION['czy_rosnaco'])) $_SESSION['czy_rosnaco'] = true;
 if (!isset($_SESSION['sort_kryt'])) $_SESSION['sort_kryt'] = "";
 
+if (!isset($_SESSION['fraza'])) $_SESSION['fraza'] = "";
+else if (isset($_POST['fraza'])) $_SESSION['fraza'] = $_POST['fraza'];
+
 //TEMP
 echo "<p>Przed ".$_SESSION['czy_rosnaco']."</p>";
 
@@ -135,10 +138,10 @@ try
         //obsługa polskich znaków
         $polaczenie->set_charset("utf8");
         
-        if (isset($_POST['fraza']))
+        if (isset($_POST['fraza']) || isset($_SESSION['fraza']))
         {
             //pobranie frazy z okienka
-            $fraza = $_POST['fraza'];
+            $fraza = $_SESSION['fraza'];
             //wyniki z fraza
             $zapytanie = "SELECT * FROM klienci WHERE
                 nazwa_klienta LIKE '%$fraza%' OR
@@ -167,6 +170,7 @@ try
             }
         }
         
+        //realizacja zapytania
         $wynik = $polaczenie->query($zapytanie);
     }
     //zamknięcie połączenia
