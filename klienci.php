@@ -203,7 +203,7 @@ catch(Exception $e)
             <article>
                 <div>
                     <div class="szukana">
-                        <p>Szukana fraza</p>
+                        <p>Szukana fraza: <b><?php if (isset($_SESSION['fraza'])) echo $_SESSION['fraza']?></b></p>
                     </div>
                     <div class="szukaj">
                         <form method="post">
