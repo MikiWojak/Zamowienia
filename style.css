@@ -42,8 +42,18 @@ footer p
     text-align: center;
 }
 
+.szukana
+{
+    float: left;
+    width: 50%;
+    vertical-align: middle;
+}
+
 .szukaj
 {
-    margin-bottom: 10px;
+    float: left;
+    width: 50%;
     text-align: right;
+    margin-top: auto;
+    margin-bottom: auto;
 }

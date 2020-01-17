@@ -201,12 +201,18 @@ catch(Exception $e)
     <div class="container">
        <main>
             <article>
-               <div class="szukaj">
-                    <form method="post">
-                        <input type="text" name="fraza">
-                        <input type="submit" value="Szukaj">
-                    </form> 
-                </div>   
+                <div>
+                    <div class="szukana">
+                        <p>Szukana fraza</p>
+                    </div>
+                    <div class="szukaj">
+                        <form method="post">
+                            <input type="text" name="fraza">
+                            <input type="submit" value="Szukaj">
+                        </form> 
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
             </article>
             
            <article>
