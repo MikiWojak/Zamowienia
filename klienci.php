@@ -192,6 +192,15 @@ catch(Exception $e)
     <title>Klienci</title>
     
     <link rel="stylesheet" href="style.css">
+    
+    <script type="text/javascript">
+        
+        function gora_dol(nazwa_elementu)
+        {
+            document.getElementById(nazwa_elementu).innerHTML = "Góra";
+        }
+        
+    </script>
 </head>
 <body>
    <header>
@@ -224,8 +233,9 @@ catch(Exception $e)
                             <th>
                                 <form method="post">
                                     <input type="hidden" name="nazwa_klienta">
-                                    <input type="submit" value="Nazwa">
+                                    <input type="submit" value="Nazwa" onclick='gora_dol("nazwa")'>
                                 </form>
+                                <div id="nazwa"></div>
                             </th>
                             <th>
                                 <form method="post">
